@@ -1,0 +1,12 @@
+import os
+import subprocess
+
+def disable_goguardian():
+    try:
+        # Command to disable GoGuardian extension
+        subprocess.run(['chrome', '--disable-extensions=goGuardianExtensionId'], check=True)
+        print("GoGuardian extension has been disabled.")
+    except subprocess.CalledProcessError as e:
+        print(f"An error occurred: {e}")
+
+disable_goguardian()
